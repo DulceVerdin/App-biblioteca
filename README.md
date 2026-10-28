@@ -23,6 +23,8 @@ Mi estructura quedó así:
 biblioteca_universitaria/
 ├── server.py
 ├── requirements.txt
+├── static-styles-CSS/
+│   └── styles.css
 └── templates/
     ├── layout.html
     ├── index.html
@@ -42,6 +44,7 @@ También configuré el servidor para que funcione en el puerto 5050.
 En layout.html hice la estructura principal de la página. Agregué Bootstrap para darle estilo y una barra de navegación con los enlaces de Inicio, Catálogo, Servicios y Contacto.
 
 Esta plantilla se comparte con todas las páginas para no tener que repetir el mismo menú.
+Los estilos propios de la interfaz se guardan en `static-styles-CSS/styles.css` y se cargan desde `layout.html`.
 7. Crear las páginas
 Creé las cuatro páginas HTML y utilicé la plantilla principal para que todas tuvieran el mismo diseño.
 - Inicio: agregué una bienvenida, el propósito de la biblioteca y su horario.
@@ -59,4 +62,3 @@ Después abrí el navegador y entré a http://127.0.0.1:5050 para ver mi página
 Probé las cuatro páginas y comprobé que los enlaces del menú funcionaran correctamente, que apareciera el contenido de cada sección y que todas compartieran el mismo diseño.
 10. Publicar en GitHub
 Por último, puedo subir mi proyecto a GitHub para guardar el código y compartirlo.
-
