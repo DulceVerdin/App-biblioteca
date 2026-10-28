@@ -10,12 +10,17 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     >
+    <style>
+      .bg-rosa {
+        background-color: #e83e8c !important; /* Puedes cambiar el código hexadecimal por el tono de rosa que prefieras */
+      }
+    </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-rosa">
       <div class="container-fluid">
         <a class="navbar-brand" href="{{ url_for('inicio') }}">Biblioteca Universitaria Central</a>
-        <div class="navbar-nav flex-row">
+        <div class="navbar-nav">
           <a class="nav-link" href="{{ url_for('inicio') }}">Inicio</a>
           <a class="nav-link" href="{{ url_for('catalogo') }}">Catálogo</a>
           <a class="nav-link" href="{{ url_for('servicios') }}">Servicios</a>
