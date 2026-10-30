@@ -1,3 +1,233 @@
-.bg-rosa {
-  background-color: #e83e8c !important;
+:root {
+  color-scheme: light;
+  --color-ink: #28212d;
+  --color-night: #211a27;
+  --color-plum: #34243b;
+  --color-orange: #d97721;
+  --color-orange-dark: #a94d14;
+  --color-paper: #fffaf2;
+  --color-border: #eadbca;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-ink);
+  background:
+    radial-gradient(ellipse at 85% 12%, rgb(217 119 33 / 16%), transparent 32rem),
+    linear-gradient(145deg, #211a27 0%, #302337 52%, #201923 100%);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.navbar.bg-rosa {
+  background: linear-gradient(105deg, var(--color-night), var(--color-plum)) !important;
+  border-bottom: 3px solid var(--color-orange);
+  box-shadow: 0 8px 24px rgb(15 10 18 / 25%);
+}
+
+.navbar .container-fluid {
+  max-width: 1200px;
+  padding: 0.65rem 1.25rem;
+  gap: 1rem;
+}
+
+.navbar-brand {
+  color: var(--color-paper);
+  font-weight: 700;
+  letter-spacing: 0.015em;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+  color: #ffc078;
+}
+
+.navbar-nav {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.navbar .nav-link {
+  padding: 0.55rem 0.8rem;
+  border-radius: 0.5rem;
+  color: #eee5ef;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: #fff;
+  background-color: rgb(217 119 33 / 22%);
+}
+
+main.container-fluid {
+  position: relative;
+  width: min(100% - 2rem, 1100px);
+  margin: clamp(1.5rem, 5vw, 3.5rem) auto;
+  padding: clamp(1.5rem, 5vw, 3.5rem) !important;
+  overflow: hidden;
+  background: var(--color-paper);
+  border: 1px solid rgb(255 255 255 / 70%);
+  border-top: 5px solid var(--color-orange);
+  border-radius: 1rem;
+  box-shadow: 0 22px 60px rgb(10 7 12 / 32%);
+}
+
+main.container-fluid::after {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  width: 230px;
+  height: 170px;
+  background: url("/static/halloween-library.svg") center / contain no-repeat;
+  content: "";
+  pointer-events: none;
+}
+
+body.page-catalogo main.container-fluid::after {
+  background-image: url("/static/halloween-catalogo.svg");
+}
+
+body.page-servicios main.container-fluid::after {
+  background-image: url("/static/halloween-servicios.svg");
+}
+
+body.page-contacto main.container-fluid::after {
+  background-image: url("/static/halloween-contacto.svg");
+}
+
+main h1,
+main h2 {
+  color: var(--color-plum);
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+main h1 {
+  max-width: 70%;
+  margin-bottom: 1rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: -0.035em;
+}
+
+main h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+}
+
+main h2::after {
+  display: block;
+  width: 3rem;
+  height: 3px;
+  margin-top: 0.6rem;
+  background: var(--color-orange);
+  border-radius: 3px;
+  content: "";
+}
+
+main p {
+  max-width: 72ch;
+  line-height: 1.75;
+}
+
+main .lead {
+  margin-bottom: 1.5rem;
+  color: var(--color-orange-dark);
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  font-weight: 550;
+}
+
+main ul {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+main li {
+  position: relative;
+  padding: 1rem 1.1rem 1rem 2.8rem;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 0.7rem;
+  line-height: 1.65;
+}
+
+main li::before {
+  position: absolute;
+  top: 1.45rem;
+  left: 1.1rem;
+  width: 0.65rem;
+  height: 0.65rem;
+  background: var(--color-orange);
+  border: 2px solid #f4c18b;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px #fff0dc;
+  content: "";
+}
+
+main li strong {
+  color: var(--color-plum);
+}
+
+a:focus-visible {
+  outline: 3px solid #ffbd70;
+  outline-offset: 3px;
+}
+
+@media (max-width: 575.98px) {
+  .navbar .container-fluid {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .navbar-nav {
+    margin-left: -0.5rem;
+  }
+
+  .navbar .nav-link {
+    padding: 0.45rem 0.6rem;
+  }
+
+  main.container-fluid {
+    width: calc(100% - 1.25rem);
+    margin: 1.25rem auto;
+    padding-top: 8rem !important;
+    border-radius: 0.75rem;
+  }
+
+  main.container-fluid::after {
+    top: 0.65rem;
+    right: 50%;
+    width: 150px;
+    height: 105px;
+    transform: translateX(50%);
+  }
+
+  main h1 {
+    max-width: none;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 800px) {
+  main.container-fluid::after {
+    width: 180px;
+    height: 135px;
+  }
+
+  main h1 {
+    max-width: 62%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
